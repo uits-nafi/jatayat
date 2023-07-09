@@ -47,18 +47,22 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
                 <option value="Dinajpur"></option>
                 <option value="Khulna"></option>
             </datalist>
+            <input type="section" list="scripted" name="type"placeholder="Type"/>
+            <datalist id="scripted">
+                <option value="Mini Bus"></option>
+                <option value="Private Car"></option>
+                <option value="Truck"></option>
+            </datalist>
             <button>Submit</button>
         </form>
     </div>
    <div class="main-box">
-    <%busdata.forEach((e)=>{%>
+    <%data.forEach((e)=>{%>
         <div class="bus-box">
             <h3>From:<%=e.from%></h3>
             <h3>TO:<%=e.to%></h3>
-            <h3>Bus:<%=e.bus%></h3>
-            <h3>Start TIme:<%=e.start%></h3>
-            <p>Price:<%=e.price%></p>
-            <button><a href="/booked/<%=e._id%>">Book Now</a></button>
+            <h3>Type:<%=typeo%></h3>
+            <button><a href="/rentalpage/<%=e._id%>">Book Now</a></button>
          </div>
     <%})%>
 

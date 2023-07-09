@@ -1,0 +1,47 @@
+.book-box{
+    width: 100%;
+    height: 100vh;
+}
+.book-text{
+    padding: 2rem;
+    text-align: center;
+}
+.book-text h1{
+    margin-bottom: 0.5rem;
+}
+.book-text hr{
+    width: 20rem;
+    height: 0.2rem;
+    margin: auto;
+}
+.book-info{
+    width: 80%;
+    height: auto;
+    border: 1px solid black;
+    margin: auto;
+}
+.book-info ul li{
+    padding: 1rem;
+    font-size: 2rem;
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+.book-info ul li:hover{
+         background-color: #bdc3c7;
+}
+.btn-box{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-box button{
+    width: 15rem;
+    height: 5rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #35def0;
+    font-size: 1.6rem;
+    color: black;
+    border-radius: 0.2rem;
+}

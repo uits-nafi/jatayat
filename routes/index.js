@@ -9,6 +9,7 @@ const usedata=require("../models/signup")
 const middlew=require("../middleware/controll")
 const mainf=require("../controllers/main")
 const BusData=require("../models/bus")
+const SSLCommerzPayment = require("sslcommerz-lts");
 mongoose.connect("mongodb+srv://aakbor557:CTJOVarUEQoDH6SR@cluster0.0byudzt.mongodb.net/?retryWrites=true&w=majority",{
     useUnifiedTopology: true,
     useNewUrlParser: true
@@ -57,7 +58,15 @@ route.get("/login",middlew.islogout,(req,res)=>{
     console.log(err)
   }
 })
-route.get("/dashboard",(req,res)=>{
+route.get("/logout",middlew.islogin,(req,res)=>{
+  try{
+       req.session.destroy();
+       res.redirect("/")
+  }catch(err){
+    console.log(err)
+  }
+})
+route.get("/dashboard",middlew.islogin,(req,res)=>{
   try{
       res.render("./pages/dashboard")
   }catch(err){
@@ -86,7 +95,7 @@ route.post("/login",async(req,res)=>{
   }
 })
 route.get("/about",middlew.islogout,mainf.about)
-route.get("/",(req,res)=>{
+route.get("/",middlew.islogout,(req,res)=>{
   try{
     res.render("./pages/home")
   }catch(err){
@@ -115,20 +124,20 @@ route.get("/whyus",middlew.islogout,(req,res)=>{
     console.log(err)
   }
 })
-route.get("/ticket",(req,res)=>{
+route.get("/ticket",middlew.islogin,(req,res)=>{
   try{
     res.render("./pages/ticket")
   }catch(err){
     console.log(err)
   }
 })
-route.get("/information",async(req,res)=>{
+route.get("/information",middlew.islogin,async(req,res)=>{
   try{
     var search='';
     if(req.query.search){
       search=req.query.search
     }
-    const podata=await BusData.find({from:req.query.from,to:req.query.to});
+    const podata=await BusData.find({from:req.query.from});
     console.log(podata)
     res.render("./pages/information",{busdata:podata})
   }catch(err){
@@ -162,6 +171,86 @@ route.post("/setdata",(req,res)=>{
     res.redirect("/setdata")
   }catch(err){
     console.log(err.name)
+  }
+})
+route.get("/booked/:id",middlew.islogin,async(req,res)=>{
+  try{
+    const sessi= req.session.user_id
+    const userinfo=await BusData.findById({_id:req.params.id});
+    console.log(userinfo)
+    res.render("./pages/booke",{data:userinfo,sessioninfo:sessi})
+  }catch(err){
+    console.log(err)
+  }
+})
+route.get("/pament/:id",middlew.islogin,async(req,res)=>{
+  const dataset=await BusData.findById({_id:req.params.id});
+  const data = {
+    total_amount:dataset.price,
+    currency: 'BDT',
+    tran_id: 'REF123',
+    success_url: `${process.env.ROOT}/ssl-payment-success`,
+    fail_url: `${process.env.ROOT}/ssl-payment-fail`,
+    cancel_url: `${process.env.ROOT}/ssl-payment-cancel`,
+    shipping_method: 'No',
+    product_name: 'Computer.',
+    product_category: 'Electronic',
+    product_profile: 'general',
+    cus_name: 'Customer Name',
+    cus_email: 'cust@yahoo.com',
+    cus_add1: 'Dhaka',
+    cus_add2: 'Dhaka',
+    cus_city: 'Dhaka',
+    cus_state: 'Dhaka',
+    cus_postcode: '1000',
+    cus_country: 'Bangladesh',
+    cus_phone: '01711111111',
+    cus_fax: '01711111111',
+    multi_card_name: 'mastercard',
+    value_a: 'ref001_A',
+    value_b: 'ref002_B',
+    value_c: 'ref003_C',
+    value_d: 'ref004_D',
+    ipn_url: `${process.env.ROOT}/ssl-payment-notification`,
+  };
+
+  const sslcommerz = new SSLCommerzPayment('testbox', 'qwerty', false) //true for live default false for sandbox
+  sslcommerz.init(data).then(data => {
+
+    //process the response that got from sslcommerz 
+    //https://developer.sslcommerz.com/doc/v4/#returned-parameters
+
+    if (data?.GatewayPageURL) {
+      return res.status(200).redirect(data?.GatewayPageURL);
+    }
+    else {
+      return res.status(400).json({
+        message: "Session was not successful"
+      });
+    }
+  });
+})
+route.get("/rental",middlew.islogin,async(req,res)=>{
+  try{
+    var search='';
+    if(req.query.search){
+      search=req.query.search
+    }
+    const podata=await BusData.find({from:req.query.from});
+     res.render("./pages/rental",{data:podata,typeo:req.query.type})
+  }catch(err){
+    console.log(err)
+  }
+})
+// rental bookin
+route.get("/rentalpage/:id",middlew.islogin,async(req,res)=>{
+  try{
+    const sessi= req.session.user_id
+    const userinfo=await BusData.findById({_id:req.params.id});
+    console.log(userinfo)
+    res.render("./pages/rentalpage",{data:userinfo,sessioninfo:sessi})
+  }catch(err){
+    console.log(err)
   }
 })
 module.exports=route;
