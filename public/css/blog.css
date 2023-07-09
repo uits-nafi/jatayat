@@ -44,6 +44,10 @@
     border-radius: 1rem;
     background: rgba(255, 255, 255, 0.84);
 }
+.post img{
+    height: 25rem;
+    width: 100%;
+}
 .posttext{
     padding: 1rem;
 }

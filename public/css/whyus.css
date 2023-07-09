@@ -62,9 +62,10 @@
 @media(max-width:768px){
     .container{
         height: 50vh;
+        width: 100%;
     }
     .hero{
-        width: 50vh;
+        width: 100%;
     }
     .hero h1{
         font-size: 5rem;

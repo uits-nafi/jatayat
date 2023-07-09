@@ -12,6 +12,10 @@ const UserSignup=mongoose.Schema({
     password:{
         type:String,
         require:true
+    },
+    is_admin:{
+        type:Number,
+        require:true
     }
 },{timestamps:true})
 module.exports=new mongoose.model("UserData",UserSignup)

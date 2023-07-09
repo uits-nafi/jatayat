@@ -77,18 +77,18 @@ route.get("/dashboard",middlew.islogin,(req,res)=>{
 route.post("/login",async(req,res)=>{
   try{
       const email=req.body.email;
-      const name=req.body.name;
+      const password=req.body.password;
       const usergatdata=await usedata.findOne({email:email});
       if(usergatdata){
-          if(usergatdata.name==name){
+          if(usergatdata){
               req.session.user_id=usergatdata;
               res.redirect("/dashboard");
               console.log("ok")
           }else{
-          res.render("login",{message:"Please,Properly Fill Up Your Information"})
+          res.render("./pages/login",{message:"Please,Properly Fill Up Your Information"})
      }
      }else{
-          res.render("login",{message:"Please,Properly Fill Up Your Information"})
+          res.render("./pages/login",{message:"Please,Properly Fill Up Your Information"})
      }
   }catch(err){
       console.log(err.name)
@@ -137,7 +137,7 @@ route.get("/information",middlew.islogin,async(req,res)=>{
     if(req.query.search){
       search=req.query.search
     }
-    const podata=await BusData.find({from:req.query.from});
+    const podata=await BusData.find({from:req.query.from,to:req.query.to});
     console.log(podata)
     res.render("./pages/information",{busdata:podata})
   }catch(err){
@@ -236,12 +236,12 @@ route.get("/rental",middlew.islogin,async(req,res)=>{
     if(req.query.search){
       search=req.query.search
     }
-    const podata=await BusData.find({from:req.query.from});
+    const podata=await BusData.find({from:req.query.from,to:req.query.to});
      res.render("./pages/rental",{data:podata,typeo:req.query.type})
   }catch(err){
     console.log(err)
   }
-})
+});
 // rental bookin
 route.get("/rentalpage/:id",middlew.islogin,async(req,res)=>{
   try{

@@ -19,8 +19,11 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
             <h1>JATAYAT</h1></a>
         </div>
         <nav id="nav">
-            <button><i class='bx bx-car'></i> Rental</button>
-            <button><i class='bx bx-bus'></i> <a href="/ticket">Tickets</a></button>
+            <ul>
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+            <button><i class='bx bx-car'></i><a href="/rental"style="text-decoration:none">Rental</a></button>
+                <button><i class='bx bx-bus'></i> <a href="/information"style="text-decoration:none">Tickets</a></button>
         </nav>
         <div class="menu"id="menu">
             <i class='bx bx-menu' ></i>
@@ -37,6 +40,9 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
                 <option value="Rangpur"></option>
                 <option value="Dinajpur"></option>
                 <option value="Khulna"></option>
+                <option value="Cox's Bazar"></option>
+                <option value="Sylhet"></option>
+                <option value="Rajshahi"></option>
             </datalist>
             <input type="section" list="script" name="to"placeholder="To...."/>
             <datalist id="script">
@@ -46,6 +52,9 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
                 <option value="Rangpur"></option>
                 <option value="Dinajpur"></option>
                 <option value="Khulna"></option>
+                <option value="Cox's Bazar"></option>
+                <option value="Sylhet"></option>
+                <option value="Rajshahi"></option>
             </datalist>
             <button>Submit</button>
         </form>
@@ -64,5 +73,14 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
    </div>
 </div>
+<script>
+    var nav=document.getElementById("nav");
+    var menu=document.getElementById("menu");
+   menu.addEventListener("click",function(){
+    nav.classList.toggle("activemenu")
+   });
+// animation
+ AOS.init();
+</script>
 </body>
 </html>

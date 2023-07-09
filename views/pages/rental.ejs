@@ -19,8 +19,11 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
             <h1>JATAYAT</h1></a>
         </div>
         <nav id="nav">
-            <button><i class='bx bx-car'></i> Rental</button>
-            <button><i class='bx bx-bus'></i> <a href="/ticket">Tickets</a></button>
+            <ul>
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+            <button><i class='bx bx-car'></i><a href="/rental"style="text-decoration:none">Rental</a></button>
+                <button><i class='bx bx-bus'></i> <a href="/information"style="text-decoration:none">Tickets</a></button>
         </nav>
         <div class="menu"id="menu">
             <i class='bx bx-menu' ></i>
@@ -29,7 +32,7 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 <div class="main-page">
     <div class="search-box">
         <form>
-            <input type="section" list="scripts" name="from"placeholder="From...."/>
+            <input type="section" list="scripts" name="from"placeholder="From...."required/>
             <datalist id="scripts">
                 <option value="Chittagong"></option>
                 <option value="Dhaka"></option>
@@ -38,7 +41,7 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
                 <option value="Dinajpur"></option>
                 <option value="Khulna"></option>
             </datalist>
-            <input type="section" list="script" name="to"placeholder="To...."/>
+            <input type="section" list="script" name="to"placeholder="To...."required/>
             <datalist id="script">
                 <option value="Chittagong"></option>
                 <option value="Dhaka"></option>
@@ -47,7 +50,7 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
                 <option value="Dinajpur"></option>
                 <option value="Khulna"></option>
             </datalist>
-            <input type="section" list="scripted" name="type"placeholder="Type"/>
+            <input type="section" list="scripted" name="type"placeholder="Type"required/>
             <datalist id="scripted">
                 <option value="Mini Bus"></option>
                 <option value="Private Car"></option>
@@ -68,5 +71,14 @@ href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
    </div>
 </div>
+<script>
+    var nav=document.getElementById("nav");
+    var menu=document.getElementById("menu");
+   menu.addEventListener("click",function(){
+    nav.classList.toggle("activemenu")
+   });
+// animation
+ AOS.init();
+</script>
 </body>
 </html>

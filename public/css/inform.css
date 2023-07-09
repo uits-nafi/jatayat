@@ -48,6 +48,14 @@
     background-color: #35def0;
     font-size: 1.6rem;
     color: black;
-
     border-radius: 0.2rem;
+}
+
+@media(max-width:768px){
+    .search-box form{
+        flex-direction: column;
+    }
+    .bus-box{
+        width: 80%;
+    }
 }
