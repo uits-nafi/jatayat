@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+:root {
+  --theme-bg: #010313;
+}
+.signup {
+  width: 100%;
+  height: 100vh;
+  background-color: #010313;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sigupmain {
+  width: 35%;
+  height: auto;
+  padding: 25px;
+  background-color: rgba(51, 38, 153, 0.1254901961);
+}
+.text-signup {
+  color: white;
+}
+.text-signup h1 {
+  padding-bottom: 20px;
+}
+.sigupmain form {
+  width: 100%;
+}
+ form .boxinp {
+  width: 100%;
+  height: 60px;
+  margin-top: 13px;
+  background-color: #131237;
+  border-radius: 6px;
+  padding: 20px;
+}
+ form input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: white;
+  letter-spacing: 1;
+  font-size: 17px;
+  background: none;
+  outline: none;
+  font-weight: 400;
+}
+ form input::placeholder {
+  color: whitesmoke;
+  letter-spacing: 1px;
+}
+.pass-box {
+  display: flex;
+  align-items: center;
+  background-color: #131237;
+}
+.pass-box i {
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+.sigupmain form button {
+  margin-top: 20px;
+  width: 180px;
+  height: 55px;
+  border: none;
+  font-size: 18px;
+  color: white;
+  background-color: #00a8ff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.sigupmain form button:hover {
+  background: none;
+  border: 1px solid #00a8ff;
+  cursor: pointer;
+}
+.account-text {
+  margin-top: 15px;
+  color: white;
+}
+.account-text p a {
+  margin-left: 8px;
+  color: #00a8ff;
+}
+.loading{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f6fa;
+}
+.loading img{
+  width:100px;
+  height: 100px;
+
+}
+.sign-text p{
+  color: red;
+  margin-top: 15px;
+}
+input::-webkit-file-upload-button {
+  background-color: #00a8ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  height: auto;
+}
+.img-box{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .sigupmain {
+    width: 85%;
+  }
+}

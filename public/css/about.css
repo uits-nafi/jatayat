@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Montserrat:wght@600&family=Roboto:ital,wght@0,500;1,500&display=swap');
+
+.container{
+    width: 100%;
+    height: 80vh;
+}
+.hero{
+    width: 100%;
+    height: 80vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.pexels.com/photos/2942172/pexels-photo-2942172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutbox{
+    width: 35%;
+    text-align: center;
+}
+.aboutbox h1{
+    font-size: 6rem;
+    color:#35def0 ;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.aboutbox p{
+    font-size: 1.5rem;
+    color: white;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+}
+.aboutbox button{
+    width: 20rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    background-color: #35def0;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.aboutbox button a {
+    text-decoration: none;
+    color: black;
+}
+.division{
+    width: 100%;
+    height: auto;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.84)),url(../images/particle_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mission{
+    width: 100%;
+    height: auto;
+    padding: 3rem;
+    position:relative;
+}
+.mission::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    height: 1rem;
+    background-color: #35def0;
+}
+.mitext{
+    padding: 3rem 0rem;
+}
+.mitext h1{
+    color: #35def0;
+    font-size: 5rem;
+    font-weight: 800;
+}
+.mibox{
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.misbox{
+    width: 100%;
+    height: 100%;
+}
+.misbox img{
+    width: 70%;
+    height: 100%;
+}
+.miright p{
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+    color: #95a5a6;
+
+}
+.commitment{
+    width: 100%;
+    height: auto;
+}
+.comtext{
+    padding: 3rem;
+}
+.comtext h1{
+    font-size: 5rem;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: #35def0;
+}
+.comtext p{
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    margin-top: 2rem;
+
+}
+.comitbox{
+    width: 100%;
+    height: 40rem;
+}
+.comitbox img{
+    width: 100%;
+    height: 100%;
+}
+/* responsive */
+@media(max-width:768px){
+    .container{
+        height: 70vh;
+    }
+    .hero{
+        height: 70vh;
+    }
+    .aboutbox h1{
+        font-size: 5rem;
+    }
+    .aboutbox{
+        width: 80%;
+    }
+    .mibox{
+        flex-direction: column;
+        height: auto;
+    }
+    .comtext h1{
+        font-size: 4rem;
+    }
+    .mitext h1{
+        font-size: 4rem;
+    }
+}

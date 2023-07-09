@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- css link -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <!-- fav icon -->
+  <link rel="shortcut icon" href="images/JATAYAT.png" type="image/x-icon">
+  <!-- icon link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!-- animation link -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>User Profile | Jataat</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+         <a href="/"><img src="images/Jataat.png" alt="logo">
+          <h1>JATAYAT</h1></a>
+      </div>
+      <nav id="nav">
+          <ul>
+              <li><a href="/whyus">Why Us</a></li>
+              <li><a href="/about">About Us</a></li>
+              
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/login">Log In</a></li>
+          </ul>
+      </nav>
+      <div class="menu"id="menu">
+          <i class='bx bx-menu' ></i>
+      </div>
+  </header>
+
+    <!-- user profile section -->
+    <div class="profile-section">
+      <h1>User Profile</h1>
+      <div class="profile-container">
+        <div class="profile-info">
+          <h2>Welcome, <span id="username"></span>!</h2>
+          <p>Email: <span id="email"></span></p>
+        </div>
+        <div class="profile-image">
+          <img src="images/profile-picture.png" alt="Profile Picture">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    var nav = document.getElementById("nav");
+    var menu = document.getElementById("menu");
+    menu.addEventListener("click", function() {
+      nav.classList.toggle("activemenu");
+    });
+
+    
+    window.addEventListener("DOMContentLoaded", function() {
+      fetchProfileData();
+    });
+
+    function fetchProfileData() {
+      
+      const userId = 'userId';
+
+      fetch(`/profile/${userId}`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("username").textContent = data.username;
+          document.getElementById("email").textContent = data.email;
+        })
+        .catch(error => console.error(error));
+    }
+
+  
+
+    AOS.init();
+  </script>
+</body>
+</html>

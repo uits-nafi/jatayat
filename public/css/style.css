@@ -1,0 +1,902 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Montserrat:wght@600&family=Roboto:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Roboto:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Montserrat:wght@600&family=Roboto:ital,wght@0,500;1,500&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+::selection{
+    background-color: green;
+    color: #35def0;
+}
+body{
+    overflow: hidden;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+.container{
+    width: 100%;
+    height: 90vh;
+}
+header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+    z-index: 1000;
+    
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    cursor: pointer;
+}
+.logo a{
+    text-decoration: none;
+}
+.logo a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width:6rem ;
+    height:6rem;
+    border-radius: 50%;
+}
+.logo h1{
+    font-size: 2.5rem;
+    color: #35def0;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #7f8fa6;
+}
+nav button{
+    width: 12rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    color: black;
+    border: none;
+    cursor: pointer;
+    background-color: #35def0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.btn button i{
+    font-size: 2rem;
+}
+.activemenu{
+    display: block;
+}
+.menu{
+   width: 4.5rem;
+   height: 4.5rem;
+   border: 0.1rem solid gray;
+   display: grid;
+   place-items: center;
+   border-radius: 0.2rem;
+   cursor: pointer;
+   display: none;
+}
+.menu i{
+    font-size: 4rem;
+}
+.hero{
+    width: 100%;
+    height: 80vh;
+    background-color: #35def0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+.box{
+    width: 30%;
+}
+.left h1{
+    font-size: 4rem;
+    color: Black;
+    line-height: 5rem;
+    margin-bottom: 2rem;
+}
+.left p{
+    font-size: 1.6rem;
+    color: Black;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+}
+.right{
+    height: 60rem;
+    width: 40%;
+}
+.right img{
+    width: 100%;
+    height: 100%;
+}
+.left button{
+    width: 20rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    color: black;
+    border: none;
+    outline: none;
+    background-color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+/* counter */
+.counter{
+    width: 100%;
+    height: 50rem;
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../images/soudi_arabia.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.text{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.text h1{
+    color: white;
+    font-size: 4rem;
+}
+.cmain{
+    display: flex;
+    gap: 2rem;
+}
+.cbox{
+    width: 30rem;
+    padding: 1rem;
+    border-right: 0.6rem solid #35def0;
+    text-align: left;
+    color: white;
+}
+.cbox h1{
+    font-size: 7rem;
+    font-weight: bold;
+    color: #35def0;
+    margin-bottom: 1rem;
+}
+.cbox h1 span{
+    font-size: 4rem;
+}
+.cbox3{
+    border: none;
+}
+.cbox h3{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+}
+/* counter */
+/* about */
+.about{
+    width: 100%;
+    height: auto;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.84)),url(../images/particle_bg.jpg);
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+    padding: 5rem 0;
+}
+.text2{
+    padding: 4rem;
+}
+.text2 h1 .span1{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #35def0 ;
+    margin-bottom: 1.5rem;
+}
+.text2 h1 .span2{
+    font-size: 6rem;
+    color: #35def0 ;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.amain{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+.abox{
+    width: 40rem;
+    height: 50rem;
+    background-color: #35def0;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.abox:hover{
+   transform: scale(1.1);
+}
+.abox img{
+    width: 100%;
+    height: 25rem;
+}
+.atext{
+    padding: 2rem;
+}
+.atext h1{
+    color: black;
+    margin-bottom: 1.5rem;
+}
+.atext p{
+    font-size: 1.5rem;
+    color: black;
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+}
+.atext button{
+    width: 80%;
+    height: 5rem;
+    font-size: 1.7rem;
+    color: #35def0;
+    border-radius: 2.5rem;
+    display: block;
+    margin:  0 auto;
+    margin-top: 4rem;
+    border: none;
+    cursor: pointer;
+}
+/* about */
+/*-------------- app ----------------------*/
+
+.app{
+    width: 100%;
+    height: 50rem;
+    background-image: url(../images/app_bg.png), linear-gradient(rgb(53, 187, 240), rgb(171, 53, 240));
+    background-blend-mode: overlay;
+    background-size: cover;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    position: relative;
+
+}
+.aabox{
+    width: 30%;
+}
+.aleft img{
+    width: 100%;
+
+}
+.aleft{
+    position: absolute;
+    left: 10%;
+    top: -5%;
+
+}
+.aright{
+    text-align: right;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
+.aright h2{
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+.aright h1{
+    font-size: 8rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+.aright p{
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 2rem;
+    line-height: 2.5rem;
+}
+.aright button{
+    width: 15rem;
+    height: 4rem;
+    background-color: rgba(59, 130, 246, 0.5);
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    font-size: 1.8rem;
+   
+}
+/*-------------- app ----------------------*/
+.feature{
+    width: 100%;
+    height: auto;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    
+    
+}
+.fbox{
+    width: 100%;
+    height: 45rem;
+   
+}
+.firstf{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+.ffbox{
+    width: 30%;
+    height: 97%;
+    background-color: #35def0;
+    border-radius:0 2rem 2rem 0 ;
+    padding: 3rem;
+}
+.ffbox h2{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color:black;
+    font-weight: bold;
+}
+.ffbox h1{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: black;
+    font-weight: bold;
+}
+.ffbox p{
+    font-size: 1.6rem;
+    color: black;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+.fsbox{
+    width: 69%;
+    height: 100%;
+    background-color: #95a5a6;
+    border-radius:2rem 0 0 2rem ;
+    display: flex;
+    gap: 2rem;
+    padding: 2.5rem;
+}
+.secondf{
+    display: flex;
+    width: 100%;
+    height: 40rem;
+}
+.sebox1{
+    width: 60%;
+    height: 100%;
+    background-color: #35def0;
+    padding: 4rem;
+    text-align: center;
+}
+.sebox1 h1{
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 2rem;
+}
+.sebox1 p{
+    font-size: 2rem;
+    color: black;
+    line-height: 3rem;
+    text-align: justify;
+}
+.sebox2{
+    width: 40%;
+    height: 100%;
+}
+.sebox2 img{
+    width: 100%;
+    height: 100%;
+}
+.fsboxi{
+    width: 50%;
+    height: 100%;
+}
+.fsboxi h1{
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color:black;
+}
+.fsboxi h1 i{
+    color:#35def0;
+}
+.fsboxi p{
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    color: black;
+    margin-bottom: 1rem;
+}
+.fsboxi2 .subbox{
+    margin-top: 1rem;
+}
+/* -----------------customer------------ */
+
+.customer{
+    width: 100%;
+    height: 40rem;
+    background-color:#35def0;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+.ctext1{
+    text-align: center;
+
+}
+.ctext1 h1{
+    font-size: 3rem;
+    color: black;
+    font-weight: bold;
+}
+.cubox1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-top: 2rem;
+}
+.cubox1 img{
+    width:12rem;
+    /* height: 10rem; */
+}
+/* -----------------customer------------ */
+
+/* -----------------review------------ */
+
+.review{
+    width: 100%;
+    height: 70rem;
+    background-color: white;
+    padding: 3rem;
+}
+.rtext1{
+    text-align: center;
+    margin-top: 7rem;
+}
+.rtext1 h1{
+    color: #35def0;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.remain{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+}
+.rbox{
+    width: 40rem;
+    height: 40rem;
+    background-color: #35def0;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.rbox img{
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: -15%;right: 40%;
+    border-radius: 50%;
+    border: 0.2rem solid black;
+}
+/* .rbtext{
+    margin-top: 6rem;
+} */
+.rbox .rbtext p{
+   font-size: 1.7rem;
+   color: black;
+   line-height: 2.5rem;
+   margin-bottom: 3rem;
+   text-align: center;
+}
+.rbtext hr{
+    width: 5rem;
+    height: 0.4rem;
+    border-radius: 0.5rem;
+    margin:  auto;
+ 
+}
+.rbtext h2{
+    font-size: 2rem;
+    color: black;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* -----------------review------------ */
+
+/* -----------------footer------------ */
+
+footer{
+    width: 100%;
+    height: 50rem;
+    background-color: #35def0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fobox{
+    width: 40rem;
+    height: 30rem;
+    padding: 1rem;
+}
+.fobox1 h1{
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+.fobox1 .link{
+    display: flex;
+    gap: 1rem;
+}
+.link i{
+    width: 4rem;
+    height: 4rem;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+ border-radius: 50%;
+ color: gray;
+cursor: pointer;
+}
+.fobox2 h1{
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 3rem;
+    font-weight: 400;  
+}
+.fobox2 ul li{
+    list-style: none;
+    margin-top:2rem;
+}
+.fobox2 ul li a{
+    text-decoration: none;
+    color:black;
+    font-size: 1.4rem;
+}
+.fobox2 ul li a:hover{
+    text-decoration: underline;
+}
+.fobox3{
+    width: auto;
+    height: auto;
+
+}
+.fobox3 img{
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 1rem;
+}
+.fobox3 h1{
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+.fobox3 p{
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 1rem;
+}
+.input{
+    display: flex;
+    gap: 1rem;
+}
+.input input{
+    width: 20rem;
+    height: 5rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: gray;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    border: none;
+}
+.input button{
+    width: 10rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: gray;
+    cursor: pointer;
+}
+.sinupform{
+    width: 100%;
+    height: 100vh;
+    background-color: #354152;
+    display: grid;
+    place-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.sinform{
+    width: 35%;
+    height: auto;
+    background-color: #354152;
+    box-shadow: 0 0 20px #000;
+    border-radius: 0.5rem;
+    padding: 3rem;
+
+}
+.sinform h1{
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: 'Josefin Sans', sans-serif;
+}
+form{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+form input{
+    width: 80%;
+    height: 7rem;
+    padding: 1rem;
+    font-size: 1.7rem;
+    color:gray ;
+    background: transparent;
+    border: 1px solid #242c37;
+    margin-top: 2rem;
+}
+form button{
+    margin-top: 2rem;
+    width: 20rem;
+    height: 5rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #e1b12c;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 0.2rem;
+}
+.sinform p{
+    margin-top: 4rem;
+    font-size: 1.7rem;
+    color: white;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.sinform p a{
+    color: #44bd32;
+}
+/* -----------------footer------------ */
+/* responsive */
+@media(max-width:768px){
+    html{
+        font-size: 45%;
+    }
+    header{
+      justify-content: space-between;
+      padding: 0 5rem;
+    }
+    
+    nav{
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        width: 100%;
+        height: auto;
+        padding:0 2rem ;
+        padding-bottom:2rem ;
+        background-color: white;
+        justify-content: start;
+        flex-direction: column;
+        display: none;
+    }
+    nav ul{
+        display: block;
+        text-align: left;
+
+    }nav ul li{
+        margin-top: 2.5rem;
+    }
+    nav ul li a{
+        font-size: 2.2rem;
+    }
+    nav button{
+        width: 100%;
+        height: 5rem;
+        margin-top: 2rem;
+    }
+    .container{
+        height: 80vh;
+    }
+    .menu{
+        display: block;
+    }
+    .hero{
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex-direction: column-reverse;
+    }
+    .hero .box{
+        width: 80%;
+    }
+    .right{
+        height: 40rem;
+    }
+    .counter{
+        padding: 4rem;
+        height: auto;
+        flex-direction: column;
+    }
+    .text h1{
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+    }
+    .cmain{
+        flex-direction: column;
+
+    }
+    .cbox{
+        border: none;
+        text-align: center;
+    }
+    .about{
+        height: auto;
+        padding: 2rem;
+    }
+    .text2 h1 .span1{
+        font-size: 4rem;
+    }
+    .text2 h1 .span2{
+        font-size: 5rem;
+    }
+    .amain{
+        flex-direction: column;
+    }
+    .abox{
+        width: 90%;
+    }
+    .app{
+        /* padding: 3rem; */
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .aabox{
+        width: 80%;
+    }
+    .aabox h2{
+        font-size: 2.5rem;
+    }
+    .aabox h1{
+        font-size: 4.5rem;
+    }
+    .firstf{
+        flex-direction: column;
+    }
+    .ffbox{
+        width: 93%;
+        height: auto;
+    }
+    .fsbox{
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .fsboxi{
+        width: 90%;
+    }
+    .feature{
+        height: auto;
+        padding-bottom: 0;
+    }
+    .fbox{
+        height: auto;
+    }
+   .secondf{
+    flex-direction: column;
+   }
+   .sebox{
+    width: 100%;
+   }
+   .customer{
+    margin-top: 0;
+    height: auto;
+    padding: 3rem;
+   }
+   .cubox1{
+    flex-direction: column;
+    gap: 2rem;
+   }
+   .review{
+    padding: 5rem 0;
+    height: auto;
+   }
+   .remain{
+    flex-direction: column;
+    height: auto;
+    gap: 9rem;
+    
+   }
+   .rtext1{
+    padding-bottom: 8rem;
+   }
+   .rtext1 h1{
+    font-size: 2.5rem;
+   }
+  .rbox{
+   width: 90%;
+   }
+   footer{
+    height: auto;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem;
+   }
+   .fobox{
+    width: 90%;
+    height: auto;
+   }
+   .sinupform{
+    height: auto;
+    padding: 4rem;
+}
+.sinform{
+    width: 90%;
+}
+form input{
+ width: 100%;
+}
+}

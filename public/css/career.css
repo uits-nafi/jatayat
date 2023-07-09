@@ -1,0 +1,180 @@
+.container{
+    height: 80vh;
+}
+.chero{
+    background-image:linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.84)),url(../images/particle_bg.jpg);
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+header{
+    background-color:black ;
+}
+.logo h1{
+    color: white;
+
+}
+nav ul li a{
+    color: white;
+}
+nav button{
+    color: #35def0;
+    background-color: white;
+}
+.cherobox{
+    width: 30%;
+    height: 30rem;
+}
+.cherobox img{
+    width: 90%;
+}
+.cherobox h2{
+    font-size: 7rem;
+    font-weight: bold;
+    color: #35def0;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0.5rem;
+}
+.cherobox h3{
+    font-size: 5rem;
+    font-weight: bold;
+    color: #35def0;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0.5rem;
+}
+.cherobox h1{
+    font-size: 10rem;
+    font-weight: bold;
+    color: #35def0;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0.5rem;
+}
+.job{
+    width: 100%;
+    height: auto;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.84)),url(../images/particle_bg.jpg);
+    padding: 3rem;
+}
+.jmain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+}
+.jtext{
+    padding:3rem 0;
+}
+.jtext h1{
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.jbox{
+    width: 100%;
+    height: 40rem;
+    background-color: rgba(255 255 255 / 20%);
+    box-shadow: 0 0 10px -5px #35def0;
+    border-radius: 1rem;
+    border-bottom: 3px solid #35def0;
+    display: flex;
+}
+.jlbox{
+    width: 50%;
+   height: 100%;
+   padding: 2rem;
+}
+.jleft{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 2rem;
+}
+.jleft img{
+  width: 20rem;
+  height: 20rem;
+  background: transparent;
+}
+.jleft h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #35def0;
+    margin-top: 0.5rem;
+}
+.star{
+    margin-top: 2rem;
+}
+.star i{
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.jright ul li{
+   font-size: 1.7rem;
+   color: gray;
+   margin-top: 1rem;
+}
+.jright button{
+    margin-top: 2rem;
+    width: 10rem;
+    height: 4rem;
+    background-color: #35def0;
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* responsive */
+
+@media(max-width:768px){
+    .container{
+     height: 50vh;
+    }
+    .chero{
+        height: 50vh;
+    }
+   .cherobox{
+    width: 50%;
+    height: auto;
+   }
+   .cherobox:nth-child(1){
+    padding-left:2rem;
+   }
+   .cherobox h2{
+    font-size: 6rem;
+   }
+   .cherobox h3{
+    font-size: 3rem;
+   }
+   .cherobox h1{
+    font-size: 6rem;
+   }
+    nav{
+        background-color:#35def0 ;
+        display: none;
+    }
+    .job{
+        height: auto;
+    }
+    .jlbox{
+        width: 100%;
+    }
+    .jleft img{
+        width: 15rem;
+        height: 15rem;
+    }
+    .jbox{
+        flex-direction: column;
+        height: auto;
+        padding: 3rem;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css link -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/login.css">
+        <!-- fav icon -->
+        <link rel="shortcut icon" href="images/JATAYAT.png" type="image/x-icon">
+    <!-- icon link -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- animation link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Login / Jataat</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+               <a href="/"><img src="images/Jataat.png" alt="logo">
+                <h1>JATAYAT</h1></a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/whyus">Why Us</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/login">Log In</a></li>
+                </ul>
+            </nav>
+            <div class="menu"id="menu">
+                <i class='bx bx-menu' ></i>
+            </div>
+        </header>
+        <!-- hero section -->
+        <div class="sinupform">
+            <div class="sinform">
+          <h1>Log In</h1>
+          <form action="/login"method="POST">
+              <input type="text"placeholder="Enter Username"name="name"><br>
+              <input type="email"placeholder="Enter Email"name="email"><br>
+            <button>Log In</button>
+          </form>
+               </div>
+         </div>
+
+    </div>
+
+    <!-- javascript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        var nav=document.getElementuyhm6ById("nav");
+        var menu=document.getElementById("menu");
+       menu.addEventListener("click",function(){
+        nav.classList.toggle("activemenu")
+       });
+    // animation
+     AOS.init();
+    </script>
+</body>
+</html>

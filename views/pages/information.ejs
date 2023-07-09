@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/inform.css">
+    <!-- fav icon -->
+    <link rel="shortcut icon" href="images/JATAYAT.png" type="image/x-icon">
+<!-- icon link -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+           <a href="/dashboard"><img src="images/Jataat.png" alt="logo">
+            <h1>JATAYAT</h1></a>
+        </div>
+        <nav id="nav">
+            <button><i class='bx bx-car'></i> Rental</button>
+            <button><i class='bx bx-bus'></i> <a href="/ticket">Tickets</a></button>
+        </nav>
+        <div class="menu"id="menu">
+            <i class='bx bx-menu' ></i>
+        </div>
+    </header>
+<div class="main-page">
+    <div class="search-box">
+        <form>
+            <input type="text"placeholder="From..."name="from" >
+            <input type="text"placeholder="To..."name="to">
+            <button>Submit</button>
+        </form>
+    </div>
+   <div class="main-box">
+    <%busdata.forEach((e)=>{%>
+        <div class="bus-box">
+            <h3>From:<%=e.from%></h3>
+            <h3>TO:<%=e.to%></h3>
+            <h3>Bus:<%=e.bus%></h3>
+            <h3>Start TIme:<%=e.start%></h3>
+            <p>Price:<%=e.price%></p>
+            <button>Book Now</button>
+         </div>
+    <%})%>
+
+   </div>
+</div>
+</body>
+</html>

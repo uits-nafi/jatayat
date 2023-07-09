@@ -1,0 +1,102 @@
+.hero{
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(/images/road.jpg);
+    background-size: 100% 100%;
+    height: 70vh;
+}
+.container{
+    height: 70vh;
+}
+.blog{
+    width: 100%;
+    height: auto;
+    padding: 4rem;
+}
+.bltext{
+    padding: 3rem;
+    text-align: center;
+}
+.bltext h1{
+    font-size: 4rem;
+    color:black ;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.bltext p{
+    font-size: 1.7rem;
+    color: gray;
+}
+.blogmain{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.84)),url(../images/particle_bg.jpg);
+
+}
+.post{
+    width: 30%;
+    height: auto;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.84);
+}
+.posttext{
+    padding: 1rem;
+}
+.posttext h1{
+    font-size: 2.5rem;
+    color:blac ;
+
+    margin-bottom: 1rem;
+}
+.posttext p{
+    font-size: 1.5rem;
+    color:gray;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    text-decoration: justify;
+}
+.date{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.date h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black;
+    margin-bottom: 0.5rem;
+}
+.date p{
+    font-size: 1.5rem;
+}
+.date button{
+    width: 10rem;
+    height: 4rem;
+    background-color: #35def0;
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+
+}
+
+/* responsive */
+
+@media(max-width:768px){
+    .blogmain{
+        flex-direction: column;
+    }
+    .post{
+        width: 100%;
+    }
+    .bltext h1{
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,53 @@
+.main-page{
+    margin-top:10vh
+}
+ .search-box form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.search-box button{
+   width: 130px;
+}
+.search-box input{
+    width: 300px;
+    height: 55px;
+    color: black;
+}
+.main-box{
+    width: 100%;
+    height: auto;
+   padding: 5rem;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.bus-box{
+    width: 25%;
+    padding: 2rem;
+    border: 0.2rem solid black;
+}
+.bus-box h3{
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+.bus-box p{
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+}
+.bus-box button{
+    width: 15rem;
+    height: 5rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #35def0;
+    font-size: 1.6rem;
+    color: black;
+
+    border-radius: 0.2rem;
+}
