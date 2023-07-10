@@ -137,7 +137,7 @@ route.get("/information",middlew.islogin,async(req,res)=>{
     if(req.query.search){
       search=req.query.search
     }
-    const podata=await BusData.find({from:req.query.from,to:req.query.to});
+    const podata=await BusData.find({from:req.query.from});
     console.log(podata)
     res.render("./pages/information",{busdata:podata})
   }catch(err){
@@ -236,7 +236,7 @@ route.get("/rental",middlew.islogin,async(req,res)=>{
     if(req.query.search){
       search=req.query.search
     }
-    const podata=await BusData.find({from:req.query.from,to:req.query.to});
+    const podata=await BusData.find({from:req.query.from});
      res.render("./pages/rental",{data:podata,typeo:req.query.type})
   }catch(err){
     console.log(err)
