@@ -19,11 +19,12 @@
             <li>Email:<%=sessioninfo.email%></li>
             <li>From:<%=data.from%></li>
             <li>To:<%=data.to%></li>
-            <li><%=data.bus%></li>
+            <li>User Id:<%=sessioninfo._id%></li>
+            <li>Booking Id:<%=data._id%></li>
           </ul>
           <div class="btn-box">
-            <button><a href="/pament/<%=data._id%>">Pay</a></button>
-          <button onclick="window.print()">Print</button>
+            <button><a href="/pament/<%=data._id%>"style="text-decoration:none">Pay</a></button>
+            <button onclick="window.print()">Print</button>
           </div>
        </div>
     </div>
