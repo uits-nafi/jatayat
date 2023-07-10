@@ -22,9 +22,11 @@
             <li><%=data.bus%></li>
             <li><%=data.start%></li>
             <li><%=data.price%> TK</li>
+            <li>User Id:<%=sessioninfo._id%></li>
+            <li>Booking Id:<%=data._id%></li>
           </ul>
           <div class="btn-box">
-            <button><a href="/pament/<%=data._id%>">Pay</a></button>
+            <button><a href="/pament/<%=data._id%>" style="text-decoration:none;color:black">Pay</a></button>
           <button onclick="window.print()">Print</button>
           </div>
        </div>
