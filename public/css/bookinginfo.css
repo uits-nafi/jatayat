@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+.bookinginfo{
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;    margin: auto;
+}
+.bookinbox{
+    width: 80%;
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),
+    10px -10px 15px -3px rgba(0,0,0,0.1);
+    border: 0.1rem solid #8c7ae6;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: auto;
+}
+.mainhead{
+  padding: 2rem;
+  border-bottom: 1px solid #8c7ae6;
+  font-family: 'Poppins', sans-serif;
+}
+.mainhead h2{
+    margin-bottom: 0.9rem;
+    font-weight: 300;
+}
+.mainhead h3{
+    font-weight: 300;
+}
+.bardbox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 2px dotted #8c7ae6;
+}
+.bardbox h2{
+    font-weight: 400;
+    color: #57606f;
+}
+.bardbox h2:nth-child(2){
+    font-weight: bold;
+    color: black;
+}
+.paybox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 0;
+}
+.payf{
+    display: flex;
+    gap: 1rem;
+}
+.paybox button{
+    width: 13rem;
+    height: 4.5rem;
+    background-color:#35def0 ;
+   border-radius: 25px;
+   font-size: 1.7rem;
+   color: white;
+   cursor: pointer;
+   border: none;
+}
+.bardbox input{
+    width: auto;
+    height: auto;
+    border: none;
+    text-align: right;
+    font-weight: bold;
+    color: black;
+    outline: none;
+    cursor: text;
+}
+
+@media(max-width:768px){
+    .bookinginfo{
+        width: 100%;
+    }
+    .bookinbox{
+        width: 100%;
+    }
+}

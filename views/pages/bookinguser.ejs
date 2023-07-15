@@ -24,20 +24,50 @@
             <h1>Admin Panel</h1>
            </div>
            <ul>
-            <li><a href="/admin/home"><i class='bx bxs-dashboard'></i>Dashbord</a></li>
-            <li><a href="/admin/blog"><i class='bx bxl-blogger'></i>Blogs</a></li>
-            <li><a href="/admin/seatbooking"><i class='bx bxs-user-rectangle'></i>Seat Booking</a></li>
-            <li><a href="/admin/gallery"><i class='bx bxs-contact' ></i>Gallery</a></li>
-            <li><a href="/admin/edit"><i class='bx bx-edit'></i>Edit</a></li>
-            <li><a href="/admin/galleryedit"><i class='bx bx-edit'></i>GalleryEdit</a></li>
-            <li><a href="/admin/logout"><i class='bx bx-log-in-circle' ></i>SinOut</a></li>
+            <li><a href="/dashboard"><i class='bx bxs-bus'></i>Bus</a></li>
+            <li><a href="/bookingusers"><i class='bx bxl-blogger'></i>Booking-Users</a></li>
+            <li><a href="/dashboard/logout"><i class='bx bx-log-in-circle' ></i>SinOut</a></li>
            </ul>
             </div>
         </div>
         <!-- page -->
 
 <div class="page"id="page">
-      
+   <div class="textbus">
+    <h1>Booking Users</h1>
+   </div>
+   <div class="mainbus">
+    <div class="tablebox">
+        <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Seat</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Paid</th>
+                <th>Option</th>
+              </tr>
+            </thead>
+            <tbody>
+                <%data.forEach(g=>{%>
+                    <tr>
+                        <td><%=g.name%></td>
+                      <td><%=g.from%></td>
+                      <td><%=g.to%></td>
+                      <td><%=g.seat%></td>
+                      <td><%=g.email%></td>
+                      <td><%=g.number%></td>
+                      <td><%=g.paid_status%></td>
+                      <td><a href="/admin/delete3/<%=g._id%>">Delete</a></td>
+                    </tr>
+                    <%})%>
+                  </tbody>
+          </table>
+    </div>
+   </div>
 </div>
 
              <!-- page -->  

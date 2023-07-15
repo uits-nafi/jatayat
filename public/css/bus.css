@@ -1,0 +1,89 @@
+.ticketb-main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding-top: 12vh;
+   padding:4rem;
+   gap: 10rem;
+}
+.ticketleft img{
+    width: 30rem;
+    height: 40rem;
+}
+.ticketright{
+    width: 35%;
+    height: auto;
+    padding: 2rem;
+}
+.ticketright form{
+    width: 100%;
+}
+.formbox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+}
+.formbox label{
+    text-align: left;
+    font-size: 1.7rem;
+}
+.formbox input{
+    width: 100%;
+    height: 5rem;
+}
+.leftflag img{
+    width: 3rem;
+    height: 3rem;
+}
+.formbox select{
+    height: 5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.mainflag{
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    border: 1px solid gray;
+    gap: 0.7rem;
+}
+.leftflag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
+    gap: 0.8rem;
+}
+.leftflag p{
+    font-size: 1.7rem;
+}
+.mainflag input{
+    margin-bottom: 2rem;
+    border: none;
+    border-left: 1px solid black;
+    outline: none;
+}
+.ticketright form button{
+    background-color: #35def0;
+}
+@media(max-width:768px){
+    .ticketb-main{
+        flex-direction: column;
+        height: auto;
+        padding-top: 12vh;
+    }
+    .ticketright{
+        width: 100%;
+    }
+    .bookinginfo{
+        width: 80%;
+    }
+}
+/* @media print{
+    body *{
+        display: none;
+    }
+} */

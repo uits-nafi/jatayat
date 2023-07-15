@@ -229,3 +229,13 @@ table tr td a{
     color: white;
     text-decoration: none;
 }
+.mainbus{
+    width: 100%;
+    background-color: rebeccapurple;
+    height: 500px;
+}
+.textbus{
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}

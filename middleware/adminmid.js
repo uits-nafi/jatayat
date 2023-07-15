@@ -2,7 +2,7 @@ const isadmin=(req,res,next)=>{
     try{
         if(req.session.user_id){}
         else{
-            res.redirect("/login")
+            res.redirect("/admin")
         }
         next()
     }catch(err){
@@ -12,7 +12,7 @@ const isadmin=(req,res,next)=>{
 const isadlogout=(req,res,next)=>{
     try{
         if(req.session.user_id){
-            res.redirect("/admin-page")
+            res.redirect("/dashboard")
         }
         next()
     }catch(err){

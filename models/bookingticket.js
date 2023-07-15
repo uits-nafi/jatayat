@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 
-const Businfo=mongoose.Schema({
+const ticketbook=mongoose.Schema({
     from:{
         type:String,
         require:true
@@ -9,29 +9,29 @@ const Businfo=mongoose.Schema({
         type:String,
         require:true
     },
-    bus:{
+    time:{
         type:String,
         require:true
     },
-    price:{
+    seat:{
         type:String,
         require:true
     },
-    start:{
+    name:{
         type:String,
         require:true
     },
-    type_bus:{
+    number:{
+        type:Number,
+        require:true
+    },
+    email:{
         type:String,
         require:true
     },
-    broad:{
+    paid_status:{
         type:String,
-        require:true
-    },
-    drop:{
-        type:String,
-        require:true
+        default:0
     }
 },{timestamps:true})
-module.exports=new mongoose.model("Businforamtion",Businfo)
+module.exports=new mongoose.model("busticket",ticketbook)

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css link -->
+    <link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="/css/bus.css">
+      <link rel="stylesheet" href="/css/bookinginfo.css">
+
+        <!-- fav icon -->
+        <link rel="shortcut icon" href="/images/JATAYAT.png" type="image/x-icon">
+    <!-- icon link -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- animation link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>About Us / Jataat</title>
+</head>
+<body>
+    <div class="mainticket">
+        <header>
+            <div class="logo">
+              <a href="/"><img src="https://i.ibb.co/30r1rHT/Red-Yellow-Simple-Tour-Bus-Rental-Travel-Logo-1.png" alt="logo">
+                <h1>JATAYAT</h1></a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu"id="menu">
+                <i class='bx bx-menu' ></i>
+            </div>
+        </header>
+        <!-- main section -->
+        <div class="ticketb-main">
+           <div class="ticketleft">
+             <img src="https://i.ibb.co/7zTv4Wb/Rectangle-21.png" alt="">
+           </div>
+           <div class="ticketright">
+            <form>
+                <div class="formbox">
+                    <label for="from">Boarding Point</label>
+                    <input type="text"placeholder="Enter Your Location"name="board"value="<%=data.broad%>"required>
+                </div>
+                <div class="formbox">
+                    <label for="to">Dropping Point</label>
+                    <input type="text"placeholder="Enter Your Location"name="drop"value="<%=data.drop%>"required>
+                </div>
+                <div class="formbox">
+                    <label for="time">Departure Time</label>
+                    <input type="text"placeholder="Enter Your Time"name="date"value="<%=data.start%>"required disabled>
+                </div>
+                <div class="formbox">
+                    <label for="Seat">Seat</label>
+                    <select name="seat" id="seat"required>
+                        <option value="choose">Choose Your Seat</option>
+                        <option value="A1">A1</option>
+                        <option value="A2">A2</option>
+                        <option value="A3">A3</option>
+                        <option value="A4">A4</option>
+                        <option value="A5">A5</option>
+                        <option value="B1">B1</option>
+                        <option value="B2">B2</option>
+                        <option value="B3">B3</option>
+                        <option value="B4">B4</option>
+                        <option value="B5">B5</option>
+                        <option value="C1">C1</option>
+                        <option value="C2">C2</option>
+                        <option value="C3">C3</option>
+                        <option value="C4">C4</option>
+                        <option value="C5">C5</option>
+                        <option value="D1">D1</option>
+                        <option value="D2">D2</option>
+                        <option value="D3">D3</option>
+                        <option value="D4">D4</option>
+                        <option value="D5">D5</option>
+                        <option value="E1">E1</option>
+                        <option value="E2">E2</option>
+                        <option value="E3">E3</option>
+                        <option value="E4">E4</option>
+                        <option value="E5">E5</option>
+                        <option value="F1">F1</option>
+                        <option value="F2">F2</option>
+                        <option value="F3">F3</option>
+                        <option value="F4">F4</option>
+                        <option value="F5">F5</option>
+                        <option value="G1">G1</option>
+                        <option value="G2">G2</option>
+                        <option value="G3">G3</option>
+                        <option value="G4">G4</option>
+                        <option value="G5">G5</option>
+                    </select>
+                </div>
+
+                <div class="formbox">
+                    <label for="name">Passenger Name</label>
+                    <input type="text"placeholder="Enter Your Name"name="name"required>
+                </div>
+                <div class="formbox formboxm">
+                    <label for="Phone"id="leftside">Phone No</label>
+                    <div class="mainflag">
+                        <div class="leftflag">
+                            <img src="https://i.ibb.co/q7Twx25/bangladesh.png" alt="flag">
+                            <p>+880</p>
+                            </div>
+                                <input type="number"name="number"placeholder="Enter Your Number"required>
+                    </div>
+
+                </div>
+                <div class="formbox">
+                    <label for="email">Email</label>
+                    <input type="text"placeholder="Enter Your Email"name="email"required>
+                </div>
+              <button>Pay</button>
+            </form>
+           </div>
+        </div>
+        <div class="bookinginfo"id="printbox">
+
+          <div class="bookinbox">
+            <form action="/ticketbook"method="POST">
+              <div class="mainhead">
+                <h2><%=data.from%> to <%=data.to%></h2>
+                <h3><%=data.bus%>,<%=data.type_bus%> Bus</h3>
+              </div>
+
+      <div class="bardbox">
+        <h2>Boarding Point</h2>
+        <%if(userfrom){%>
+          <input type="text"name="broad"value="<%=userfrom%>">
+        <%}%>
+      </div>
+      <div class="bardbox">
+        <h2>Dropping Point</h2>
+        <%if(userto){%>
+          <input type="text"name="drop"value="<%=userto%>">
+        <%}%>
+      </div>
+      <div class="bardbox">
+        <h2>Deprature Time</h2>
+        <h2><%=data.start%></h2>
+      </div>
+      <div class="bardbox">
+        <h2>Name</h2>
+        <%if(username){%>
+         <input type="text"name="name"value="<%=username%>">
+        <%}%>
+      </div>
+      <div class="bardbox">
+        <h2>Mobile Number</h2>
+        <%if(usernumber){%>
+          <input type="text"name="number"value="<%=usernumber%>">
+        <%}%>
+      </div>
+      <div class="bardbox">
+        <h2>Email Address</h2>
+        <%if(usereamil){%>
+          <input type="text"name="email"value="<%=usereamil%>">
+        <%}%>
+      </div>
+      <div class="bardbox">
+        <h2>Seat</h2>
+        <%if(userseat){%>
+          <input type="text"name="seat"value="<%=userseat%>">
+        <%}%>
+      </div>
+      <div class="paybox">
+        <div class="payf">
+            <h2>Total Pay </h2>
+            <h2><%=data.price%> TK</h2>
+        </div>
+        <button>Pay</button>
+            </form>
+        </div>
+          </div>
+      </div>
+      <div class="print-btn"style="width: 100%;padding: 4rem;">
+        <button id="btnfi"style="display:block;background-color:#0097e6;border:none;color:white;font-size:1.7rem;cursor:pointer;margin: auto;width: 200px;height:55px;"onclick="printbox()">Print</button>
+      </div>
+          <!-- javascript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      function printbox(){
+        var body=document.querySelector("body");
+        var printb=document.getElementById("printbox").innerHTML;
+        body.innerHTML=printb;
+        window.print()
+      }
+        var nav=document.getElementById("nav");
+        var menu=document.getElementById("menu");
+       menu.addEventListener("click",function(){
+        nav.classList.toggle("activemenu")
+       });
+    // animation
+     AOS.init();
+    </script>
+</body>
+</html>

@@ -1,86 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/inform.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <link rel="stylesheet" href="css/inform.css" />
+
     <!-- fav icon -->
-    <link rel="shortcut icon" href="images/JATAYAT.png" type="image/x-icon">
-<!-- icon link -->
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <title>Document</title>
-</head>
-<body>
+    <link rel="shortcut icon" href="images/JATAYAT.png" type="image/x-icon" />
+    <!-- icon link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <title>Information</title>
+  </head>
+  <body>
     <header>
         <div class="logo">
-           <a href="/dashboard"><img src="images/Jataat.png" alt="logo">
+          <a href="/"><img src="https://i.ibb.co/30r1rHT/Red-Yellow-Simple-Tour-Bus-Rental-Travel-Logo-1.png" alt="logo">
             <h1>JATAYAT</h1></a>
         </div>
         <nav id="nav">
             <ul>
-                <li><a href="/logout">Log Out</a></li>
-            </ul>
-            <button><i class='bx bx-car'></i><a href="/rental"style="text-decoration:none">Rental</a></button>
+                <li><a href="/whyus">Why Us</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
                 <button><i class='bx bx-bus'></i> <a href="/information"style="text-decoration:none">Tickets</a></button>
+            </ul>
+            <!-- <button><i class='bx bx-car'></i> Rental</button>
+            <button><i class='bx bx-bus'></i> Tickets</button> -->
         </nav>
         <div class="menu"id="menu">
             <i class='bx bx-menu' ></i>
         </div>
     </header>
-<div class="main-page">
-    <div class="search-box">
-        <form>
-            <input type="section" list="scripts" name="from"placeholder="Type From...."/>
-            <datalist id="scripts">
-                <option value="Chittagong"></option>
-                <option value="Dhaka"></option>
-                <option value="Barishal"></option>
-                <option value="Rangpur"></option>
-                <option value="Dinajpur"></option>
-                <option value="Khulna"></option>
-                <option value="Cox's Bazar"></option>
-                <option value="Sylhet"></option>
-                <option value="Rajshahi"></option>
-            </datalist>
-            <input type="section" list="scripte" name="to"placeholder="Type To...."/>
-            <datalist id="scripte">
-                <option value="Chittagong"></option>
-                <option value="Dhaka"></option>
-                <option value="Barishal"></option>
-                <option value="Rangpur"></option>
-                <option value="Dinajpur"></option>
-                <option value="Khulna"></option>
-                <option value="Cox's Bazar"></option>
-                <option value="Sylhet"></option>
-                <option value="Rajshahi"></option>
-            </datalist>
-            <button>Submit</button>
-        </form>
-    </div>
-   <div class="main-box">
-    <%busdata.forEach((e)=>{%>
-        <div class="bus-box">
-            <h3>From:<%=e.from%></h3>
-            <h3>TO:<%=e.to%></h3>
-            <h3>Bus:<%=e.bus%></h3>
-            <h3>Start TIme:<%=e.start%></h3>
-            <p>Price:<%=e.price%></p>
-            <button><a href="/booked/<%=e._id%>">Book Now</a></button>
-         </div>
-    <%})%>
 
-   </div>
+    <!-- ticket search  -->
+    <div class="ticket-serach">
+      <div class="search-tbox">
+        <form action="">
+          <div class="serachb">
+            <label for="from">From</label>
+            <select name="from" id="from"required>
+              <option value="Chose">Chose Your Location</option>
+              <option value="Barguna">Barguna</option>
+              <option value="Barisal">Barisal</option>
+              <option value="Bhola">Bhola</option>
+              <option value="Jhalokati">Jhalokati</option>
+              <option value="Patuakhali">Patuakhali</option>
+              <option value="Pirojpur">Pirojpur</option>
+              <option value="Bandarban">Bandarban</option>
+              <option value="Brahmanbaria">Brahmanbaria</option>
+              <option value="Chandpur">Chandpur</option>
+              <option value="Chittagong">Chittagong</option>
+              <option value="Comilla">Comilla</option>
+              <option value="Cox's Bazar">Cox's Bazar</option>
+              <option value="Feni">Feni</option>
+              <option value="Khagrachhari">Khagrachhari</option>
+              <option value="Lakshmipur">Lakshmipur</option>
+              <option value="Noakhali">Noakhali</option>
+              <option value="Rangamati">Rangamati</option>
+              <option value="Dhaka">Dhaka</option>
+              <option value="Faridpur">Faridpur</option>
+              <option value="Gazipur">Gazipur</option>
+              <option value="Gopalganj">Gopalganj</option>
+              <option value="Gopalganj">Gopalganj</option>
+              <option value="Kishoreganj">Kishoreganj</option>
+              <option value="Madaripur">Madaripur</option>
+              <option value="Manikganj">Manikganj</option>
+              <option value="Munshiganj">Munshiganj</option>
+              <option value="Narayanganj">Narayanganj</option>
+              <option value="Narsingdi">Narsingdi</option>
+              <option value="Rajbari">Rajbari</option>
+              <option value="Shariatpur">Shariatpur</option>
+              <option value="Tangail">Tangail</option>
+              <option value="Bagerhat">Bagerhat</option>
+              <option value="Chuadanga">Chuadanga</option>
+              <option value="Jessore">Jessore</option>
+              <option value="Jhenaidah">Jhenaidah</option>
+              <option value="Khulna">Khulna</option>
+              <option value="Kushtia">Kushtia</option>
+              <option value="Magura">Magura</option>
+              <option value="Meherpur">Meherpur</option>
+              <option value="Narail">Narail</option>
+              <option value="Satkhira">Satkhira</option>
+              <option value="Jamalpur">Jamalpur</option>
+              <option value="Mymensingh">Mymensingh</option>
+              <option value="Netrokona">Netrokona</option>
+              <option value="Sherpur">Sherpur</option>
+              <option value="Bogra">Bogra</option>
+              <option value="Rajshahi">Rajshahi</option>
+              <option value="Joypurhat">Joypurhat</option>
+              <option value="Naogaon">Naogaon</option>
+              <option value="Natore">Natore</option>
+              <option value="Chapai Nawabganj">Chapai Nawabganj</option>
+              <option value="Pabna">Pabna</option>
+              <option value="Rajshahi">Rajshahi</option>
+              <option value="Sirajganj">Sirajganj</option>
+              <option value="Dinajpur">Dinajpur</option>
+              <option value="Rangpur">Rangpur</option>
+              <option value="Gaibandha">Gaibandha</option>
+              <option value="Kurigram">Kurigram</option>
+              <option value="Lalmonirhat">Lalmonirhat</option>
+              <option value="Nilphamari">Nilphamari</option>
+              <option value="Panchagarh">Panchagarh</option>
+              <option value="Rangpur">Rangpur</option>
+              <option value="Thakurgaon">Thakurgaon</option>
+              <option value="Habiganj">Habiganj</option>
+              <option value="Moulvibazar">Moulvibazar</option>
+              <option value="Sunamganj">Sunamganj</option>
+              <option value="Sylhet">Sylhet</option>
+            </select>
+          </div>
+
+          <div class="serachb">
+            <label for="to">To</label>
+            <select name="to" id="to"required>
+              <option value="Chose">Chose Your Location</option>
+              <option value="Barguna">Barguna</option>
+              <option value="Barisal">Barisal</option>
+              <option value="Bhola">Bhola</option>
+              <option value="Jhalokati">Jhalokati</option>
+              <option value="Patuakhali">Patuakhali</option>
+              <option value="Pirojpur">Pirojpur</option>
+              <option value="Bandarban">Bandarban</option>
+              <option value="Brahmanbaria">Brahmanbaria</option>
+              <option value="Chandpur">Chandpur</option>
+              <option value="Chittagong">Chittagong</option>
+              <option value="Comilla">Comilla</option>
+              <option value="Cox's Bazar">Cox's Bazar</option>
+              <option value="Feni">Feni</option>
+              <option value="Khagrachhari">Khagrachhari</option>
+              <option value="Lakshmipur">Lakshmipur</option>
+              <option value="Noakhali">Noakhali</option>
+              <option value="Rangamati">Rangamati</option>
+              <option value="Dhaka">Dhaka</option>
+              <option value="Faridpur">Faridpur</option>
+              <option value="Gazipur">Gazipur</option>
+              <option value="Gopalganj">Gopalganj</option>
+              <option value="Gopalganj">Gopalganj</option>
+              <option value="Kishoreganj">Kishoreganj</option>
+              <option value="Madaripur">Madaripur</option>
+              <option value="Manikganj">Manikganj</option>
+              <option value="Munshiganj">Munshiganj</option>
+              <option value="Narayanganj">Narayanganj</option>
+              <option value="Narsingdi">Narsingdi</option>
+              <option value="Rajbari">Rajbari</option>
+              <option value="Shariatpur">Shariatpur</option>
+              <option value="Tangail">Tangail</option>
+              <option value="Bagerhat">Bagerhat</option>
+              <option value="Chuadanga">Chuadanga</option>
+              <option value="Jessore">Jessore</option>
+              <option value="Jhenaidah">Jhenaidah</option>
+              <option value="Khulna">Khulna</option>
+              <option value="Kushtia">Kushtia</option>
+              <option value="Magura">Magura</option>
+              <option value="Meherpur">Meherpur</option>
+              <option value="Narail">Narail</option>
+              <option value="Satkhira">Satkhira</option>
+              <option value="Jamalpur">Jamalpur</option>
+              <option value="Mymensingh">Mymensingh</option>
+              <option value="Netrokona">Netrokona</option>
+              <option value="Sherpur">Sherpur</option>
+              <option value="Bogra">Bogra</option>
+              <option value="Rajshahi">Rajshahi</option>
+              <option value="Joypurhat">Joypurhat</option>
+              <option value="Naogaon">Naogaon</option>
+              <option value="Natore">Natore</option>
+              <option value="Chapai Nawabganj">Chapai Nawabganj</option>
+              <option value="Pabna">Pabna</option>
+              <option value="Rajshahi">Rajshahi</option>
+              <option value="Sirajganj">Sirajganj</option>
+              <option value="Dinajpur">Dinajpur</option>
+              <option value="Rangpur">Rangpur</option>
+              <option value="Gaibandha">Gaibandha</option>
+              <option value="Kurigram">Kurigram</option>
+              <option value="Lalmonirhat">Lalmonirhat</option>
+              <option value="Nilphamari">Nilphamari</option>
+              <option value="Panchagarh">Panchagarh</option>
+              <option value="Rangpur">Rangpur</option>
+              <option value="Thakurgaon">Thakurgaon</option>
+              <option value="Habiganj">Habiganj</option>
+              <option value="Moulvibazar">Moulvibazar</option>
+              <option value="Sunamganj">Sunamganj</option>
+              <option value="Sylhet">Sylhet</option>
+            </select>
+          </div>
+
+          <div class="serachb">
+            <label for="from">Bus Type</label>
+            <select name="type" id="type"required>
+              <option value="Dhaka">All</option>
+              <option value="Dhaka">AC</option>
+              <option value="Dhaka">Non-AC</option>
+            </select>
+          </div>
+
+          <div class="serachb">
+            <label for="DEPARTURE">DEPARTURE DATE</label>
+            <input type="date"name="date"required>
+          </div>
+          <button>Search Ticket</button>
+        </form>
+      </div>
+      <!-- all data -->
+<div class="data-box">
+<%data.forEach((e)=>{%>
+  <div class="data-show">
+    <div class="data-up">
+      <div class="upleft">
+        <img src="https://cms.eichertrucksandbuses.com/uploads/truck/sub-category/a933e5958e4a354cfb8d22665bd244fd.png" alt="">
+       <div class="sidebox">
+        <h3><%=e.bus%></h3><br>
+        <h4><%=e.type_bus%></h4>
+       </div>
+      </div>
+  <div class="upright">
+    <img src="https://i.ibb.co/pz4JcmZ/seat.png" alt="image">
+    <p>Seat Leaft:50</p>
+  </div>
+
+    </div>
+    <!-- sexond from -->
+<div class="secon-from">
+  <h2>Route</h2>
+  <h2><%=e.from%> - <%=e.to%></h2>
 </div>
-<script>
-    var nav=document.getElementById("nav");
-    var menu=document.getElementById("menu");
-   menu.addEventListener("click",function(){
-    nav.classList.toggle("activemenu")
-   });
-// animation
- AOS.init();
-</script>
-</body>
+        <!-- sexond from -->
+            <!-- sexond time -->
+<div class="secon-from">
+  <h2>Boarding Point</h2>
+  <h2><%=e.broad%></h2>
+</div>
+<div class="secon-from">
+  <h2>Dropping Point</h2>
+  <h2><%=e.drop%></h2>
+</div>
+        <!-- second time -->
+<!-- btn taka -->
+<div class="btnpay">
+  <div class="btnpay-left">
+     <img src="https://i.ibb.co/Gt94yJ5/mobile.png" alt="payimage">
+     <h2><%=e.price%> Tk</h2>
+  </div>
+  <div class="btnpay-right">
+    <a href="/ticketbook/<%=e._id%>"><button>View Seat</button></a>
+  </div>
+</div>
+
+<!-- btn taka -->
+   </div>
+<%})%>
+<div class="texterror">
+  <%if(typeof message!== "undefined"){%>
+    <p><%=message%></p>  
+<%}%>
+</div>
+  
+</div>
+
+            <!-- all data -->
+
+    </div>
+    <!-- ticket search  -->
+    <script>
+      var nav = document.getElementById("nav");
+      var menu = document.getElementById("menu");
+      menu.addEventListener("click", function () {
+        nav.classList.toggle("activemenu");
+      });
+      // animation
+      AOS.init();
+    </script>
+  </body>
 </html>

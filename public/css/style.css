@@ -7,6 +7,9 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+:root{
+    --maincolor: #35def0;
+}
 ::selection{
     background-color: green;
     color: #35def0;
