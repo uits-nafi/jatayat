@@ -9,6 +9,14 @@ const ticketbook=mongoose.Schema({
         type:String,
         require:true
     },
+    boarding:{
+        type:String,
+        require:true
+    },
+    dropping:{
+        type:String,
+        require:true
+    },
     time:{
         type:String,
         require:true

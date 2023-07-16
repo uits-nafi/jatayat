@@ -69,10 +69,12 @@ route.get("/information",middlew.islogout,async(req,res)=>{
     if(req.query.search){
       search=req.query.search
     }
-    const podata=await BusData.find({from:req.query.from,to:req.query.to});
-    console.log(podata.broad)
+    const podata=await BusData.find({from:req.query.from,to:req.query.to,type_bus:req.query.bustype,date:req.query.date});
+    console.log(req.query.bustype);
+    const userbookdata=await bookingdata.find({from:req.query.from,to:req.query.to}).count();
+    const mainseatdata=12-userbookdata;
     if(podata){
-      res.render("./pages/information",{data:podata})
+      res.render("./pages/information",{data:podata,mainseatdata})
     }else{
       res.render("./pages/information",{message:"We do not have this type of service"})
     }
@@ -96,6 +98,7 @@ route.post("/setdata",(req,res)=>{
       price:req.body.price,
       start:req.body.start,
       type_bus:req.body.acc,
+      date:req.body.date,
       broad:req.body.broad,
       drop:req.body.drop,
     });
@@ -116,11 +119,14 @@ route.post("/setdata",(req,res)=>{
 //   }
 // })
 route.get("/pament",middlew.islogout,(req,res)=>{
+  console.log(req.params.id)
+  const pp="64b3d2992a774031f3f4ecdf";
+const dayt=bookingdata.findById({_id:pp})
   const data = {
-    total_amount:10,
+    total_amount:50,
     currency: 'BDT',
-    tran_id: 'REF123',
-    success_url: `${process.env.ROOT}/ssl-payment-success`,
+    tran_id: pp,
+    success_url:`http://localhost:2000/pament/success/${pp}`,
     fail_url: `${process.env.ROOT}/ssl-payment-fail`,
     cancel_url: `${process.env.ROOT}/ssl-payment-cancel`,
     shipping_method: 'No',
@@ -161,6 +167,21 @@ route.get("/pament",middlew.islogout,(req,res)=>{
     }
   });
 })
+route.get("/pament/success/:id",async(req,res)=>{
+  try{
+    const dataf=await bookingdata.findById({_id:req.params.id});
+    res.render("./pages/printpage",{data:dataf})
+  }catch(err){
+   console.log(err)
+  }
+})
+route.post("/pament/success/:id",(req,res)=>{
+     try{
+       res.redirect(`/pament/success/${req.params.id}`)
+     }catch(err){
+      console.log(err)
+     }
+})
 //booking information
 // rental bookin
 route.get("/ticketbook/:id",middlew.islogout,async(req,res)=>{
@@ -172,9 +193,13 @@ route.get("/ticketbook/:id",middlew.islogout,async(req,res)=>{
     const usereamil=req.query.email;
     const usernumber=req.query.number;
     const userseat=req.query.seat;
+    const userbroad=req.query.from;
+    const userdrop=req.query.to;
+    const usedate=req.query.date;
+    const useridd=req.query.date;
     const ticketdata=await BusData.findById({_id:ticketidp});
     console.log(ticketdata)
-    res.render("./pages/bus",{data:ticketdata,username,usereamil,usernumber,userseat,userto,userfrom});
+    res.render("./pages/bus",{data:ticketdata,username,usereamil,usernumber,userseat,userto,userfrom,userbroad,userdrop,usedate,useridd});
   }catch(err){
     console.log(err)
   }
@@ -189,9 +214,13 @@ route.post("/ticketbook",(req,res)=>{
     const usernumber=req.body.number;
     const userseat=req.body.seat;
     const userdate=req.body.date;
+    const userfro=req.body.from;
+    const usertoo=req.body.to;
     const setticketbook=new bookingdata({
-      from:userfrom,
-      to:userto,
+      from:userfro,
+      to:usertoo,
+      boarding:userfrom,
+      dropping:userto,
       time:userdate,
       seat:userseat,
       name:username,
@@ -269,6 +298,23 @@ route.get("/dashboard/logout",middlew.islogin,(req,res)=>{
     console.log(err)
   }
 })
+// delete bus data
+route.get("/deletebus/:id",async(req,res)=>{
+  try{
+     const h=await BusData.findByIdAndDelete({_id:req.params.id},req.body);
+     res.redirect("/dashboard")
+  }catch(err){
+   console.log(err.name)
+  }
+});
+route.get("/bookinguser/:id",async(req,res)=>{
+  try{
+     const h=await bookingdata.findByIdAndDelete({_id:req.params.id},req.body);
+     res.redirect("/bookingusers")
+  }catch(err){
+   console.log(err.name)
+  }
+});
 //admin page
 route.get("*",(req,res)=>{
   try{

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bookinginfo.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Information</title>
+</head>
+<body>
+    <div class="bookinbox"id="printbox">
+          <div class="mainhead">
+            <h2><%=data.from%> to <%=data.to%></h2>
+          </div>
+          <form>
+            <div class="bardbox">
+                <h2>Name</h2>
+                <h2><%=data.name%></h2>
+              </div>
+              <div class="bardbox">
+                <h2>Email</h2>
+                <h2><%=data.email%></h2>
+              </div>
+              <div class="bardbox">
+                <h2>Number</h2>
+                <h2><%=data.number%></h2>
+              </div>
+          </form>
+    </div>
+    <div class="print-btn"style="width: 100%;padding: 4rem;">
+        <button><a href="/">Go Home</a></button>
+        <button id="btnfi"style="display:block;background-color:#0097e6;border:none;color:white;font-size:1.7rem;cursor:pointer;margin: auto;width: 200px;height:55px;"onclick="printbox()">Print</button>
+      </div>
+      <script>
+        function printbox(){
+          var body=document.querySelector("body");
+          var printb=document.getElementById("printbox").innerHTML;
+          body.innerHTML=printb;
+          window.print()
+        }
+    
+      </script>
+</body>
+</html>

@@ -244,12 +244,13 @@ nav button{
 }
 .abox{
     width: 40rem;
-    height: 50rem;
+    height: auto;
     background-color: #35def0;
     border-radius: 1rem;
     overflow: hidden;
     transition: 0.5s;
     cursor: pointer;
+    padding: 0rem;
 }
 .abox:hover{
    transform: scale(1.1);

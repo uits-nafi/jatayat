@@ -190,11 +190,10 @@
           </div>
 
           <div class="serachb">
-            <label for="from">Bus Type</label>
-            <select name="type" id="type"required>
-              <option value="Dhaka">All</option>
-              <option value="Dhaka">AC</option>
-              <option value="Dhaka">Non-AC</option>
+            <label for="bustype">Bus Type</label>
+            <select name="bustype" id="type"required>
+              <option value="AC">AC</option>
+              <option value="Non AC">Non-AC</option>
             </select>
           </div>
 
@@ -219,7 +218,7 @@
       </div>
   <div class="upright">
     <img src="https://i.ibb.co/pz4JcmZ/seat.png" alt="image">
-    <p>Seat Leaft:50</p>
+    <p>Available Seat : <span style="font-weight:bold"><%=mainseatdata%></span></p>
   </div>
 
     </div>
@@ -237,6 +236,10 @@
 <div class="secon-from">
   <h2>Dropping Point</h2>
   <h2><%=e.drop%></h2>
+</div>
+<div class="secon-from">
+  <h2>Date</h2>
+  <h2><%=e.date%></h2>
 </div>
         <!-- second time -->
 <!-- btn taka -->
@@ -262,7 +265,6 @@
 </div>
 
             <!-- all data -->
-
     </div>
     <!-- ticket search  -->
     <script>

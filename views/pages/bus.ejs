@@ -36,22 +36,38 @@
         </header>
         <!-- main section -->
         <div class="ticketb-main">
-           <div class="ticketleft">
-             <img src="https://i.ibb.co/7zTv4Wb/Rectangle-21.png" alt="">
+           <div class="ticketleft "style="border:1px solid black">
+             <img src="https://i.ibb.co/tCDJ9qr/Seat.png" alt="">
            </div>
            <div class="ticketright">
             <form>
+              <div class="formbox">
+                <label for="from">From</label>
+                <input type="text"placeholder="Enter Your Location"name="from"value="<%=data.from%>"readonly="readonly" style="color:black;font-weight:600">
+            </div>
+            <div class="formbox">
+              <label for="to">To</label>
+              <input type="text"placeholder="Enter Your Location"name="to"value="<%=data.to%>"readonly="readonly" style="color:black;font-weight:600">
+          </div>
                 <div class="formbox">
                     <label for="from">Boarding Point</label>
-                    <input type="text"placeholder="Enter Your Location"name="board"value="<%=data.broad%>"required>
+                    <input type="text"placeholder="Enter Your Location"name="board"value="<%=data.broad%>"readonly="readonly" style="color:black;font-weight:600">
                 </div>
                 <div class="formbox">
                     <label for="to">Dropping Point</label>
-                    <input type="text"placeholder="Enter Your Location"name="drop"value="<%=data.drop%>"required>
+                    <input type="text"placeholder="Enter Your Location"name="drop"value="<%=data.drop%>" style="color:black;font-weight:600"readonly="readonly">
                 </div>
                 <div class="formbox">
+                  <label for="time">Date</label>
+                  <input type="date"placeholder="Enter Your Date"name="date"value="<%=data.date%>"style="color:black;font-weight:600" readonly="readonly">
+              </div>
+              <div class="formbox">
+                <label for="id">Booking Id</label>
+                <input type="text"name="id"value="<%=data._id%>"style="color:black;font-weight:600" readonly="readonly">
+            </div>
+                <div class="formbox">
                     <label for="time">Departure Time</label>
-                    <input type="text"placeholder="Enter Your Time"name="date"value="<%=data.start%>"required disabled>
+                    <input type="text"placeholder="Enter Your Time"name="time"value="<%=data.start%>"style="color:black;font-weight:600" readonly="readonly">
                 </div>
                 <div class="formbox">
                     <label for="Seat">Seat</label>
@@ -127,6 +143,20 @@
                 <h3><%=data.bus%>,<%=data.type_bus%> Bus</h3>
               </div>
 
+
+              <div class="bardbox">
+                <h2>From</h2>
+                <%if(userbroad){%>
+                  <input type="text"name="from"value="<%=userbroad%>">
+                <%}%>
+              </div>
+              <div class="bardbox">
+                <h2>To</h2>
+                <%if(userdrop){%>
+                  <input type="text"name="to"value="<%=userdrop%>">
+                <%}%>
+              </div>
+
       <div class="bardbox">
         <h2>Boarding Point</h2>
         <%if(userfrom){%>
@@ -137,6 +167,12 @@
         <h2>Dropping Point</h2>
         <%if(userto){%>
           <input type="text"name="drop"value="<%=userto%>">
+        <%}%>
+      </div>
+      <div class="bardbox">
+        <h2>Date</h2>
+        <%if(usedate){%>
+         <input type="date"name="date"value="<%=usedate%>">
         <%}%>
       </div>
       <div class="bardbox">
@@ -172,7 +208,7 @@
             <h2>Total Pay </h2>
             <h2><%=data.price%> TK</h2>
         </div>
-        <button>Pay</button>
+        <button><a href="/pament/<%data._id%>">Pay</a></button>
             </form>
         </div>
           </div>

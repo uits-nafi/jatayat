@@ -25,6 +25,10 @@ const Businfo=mongoose.Schema({
         type:String,
         require:true
     },
+    date:{
+        type:String,
+        require:true
+    },
     broad:{
         type:String,
         require:true
