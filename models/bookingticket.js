@@ -37,6 +37,10 @@ const ticketbook=mongoose.Schema({
         type:String,
         require:true
     },
+    bus_name:{
+        type:String,
+        require:true
+    },
     paid_status:{
         type:String,
         default:0

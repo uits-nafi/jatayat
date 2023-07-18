@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/css/style.css">
       <link rel="stylesheet" href="/css/bus.css">
       <link rel="stylesheet" href="/css/bookinginfo.css">
-
+  <!-- alert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ 
         <!-- fav icon -->
         <link rel="shortcut icon" href="/images/JATAYAT.png" type="image/x-icon">
     <!-- icon link -->
@@ -62,8 +64,8 @@
                   <input type="date"placeholder="Enter Your Date"name="date"value="<%=data.date%>"style="color:black;font-weight:600" readonly="readonly">
               </div>
               <div class="formbox">
-                <label for="id">Booking Id</label>
-                <input type="text"name="id"value="<%=data._id%>"style="color:black;font-weight:600" readonly="readonly">
+                <label for="id">Bus Name</label>
+                <input type="text"name="bus"value="<%=data.bus%>"style="color:black;font-weight:600" readonly="readonly">
             </div>
                 <div class="formbox">
                     <label for="time">Departure Time</label>
@@ -72,42 +74,70 @@
                 <div class="formbox">
                     <label for="Seat">Seat</label>
                     <select name="seat" id="seat"required>
-                        <option value="choose">Choose Your Seat</option>
-                        <option value="A1">A1</option>
-                        <option value="A2">A2</option>
-                        <option value="A3">A3</option>
-                        <option value="A4">A4</option>
-                        <option value="A5">A5</option>
-                        <option value="B1">B1</option>
-                        <option value="B2">B2</option>
-                        <option value="B3">B3</option>
-                        <option value="B4">B4</option>
-                        <option value="B5">B5</option>
-                        <option value="C1">C1</option>
-                        <option value="C2">C2</option>
-                        <option value="C3">C3</option>
-                        <option value="C4">C4</option>
-                        <option value="C5">C5</option>
-                        <option value="D1">D1</option>
-                        <option value="D2">D2</option>
-                        <option value="D3">D3</option>
-                        <option value="D4">D4</option>
-                        <option value="D5">D5</option>
-                        <option value="E1">E1</option>
-                        <option value="E2">E2</option>
-                        <option value="E3">E3</option>
-                        <option value="E4">E4</option>
-                        <option value="E5">E5</option>
-                        <option value="F1">F1</option>
-                        <option value="F2">F2</option>
-                        <option value="F3">F3</option>
-                        <option value="F4">F4</option>
-                        <option value="F5">F5</option>
-                        <option value="G1">G1</option>
-                        <option value="G2">G2</option>
-                        <option value="G3">G3</option>
-                        <option value="G4">G4</option>
-                        <option value="G5">G5</option>
+                        <option value="choose"selected disabled>Choose Your Seat</option>
+                     <%matchseat.forEach((d)=>{%>
+                          <%if(d.seat == "A1"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="A1">A1</option>
+                          <%}%>
+                          <%if(d.seat == "A2"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="A2">A2</option>
+                          <%}%>
+                          <%if(d.seat == "A3"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="A3">A3</option>
+                          <%}%>
+                          <%if(d.seat == "B1"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="B1">B1</option>
+                          <%}%>
+                          <%if(d.seat == "B2"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="B2">B2</option>
+                          <%}%>
+                          <%if(d.seat == "B3"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="B3">B3</option>
+                          <%}%>
+                          <%if(d.seat == "C1"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="C1">C1</option>
+                          <%}%>
+                          <%if(d.seat == "C2"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="C2">C2</option>
+                          <%}%>
+                          <%if(d.seat == "C3"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="C3">C3</option>
+                          <%}%>
+                          <%if(d.seat == "D1"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="D1">D1</option>
+                          <%}%>
+                          <%if(d.seat == "D2"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="D2">D2</option>
+                          <%}%>
+                          <%if(d.seat == "D3"){%>
+                            <option disabled style="background-color:red">Booked</option>
+                         <%}else{%>
+                          <option value="D3">D3</option>
+                          <%}%>
+                        <%})%>
+                 
                     </select>
                 </div>
 
@@ -120,17 +150,17 @@
                     <div class="mainflag">
                         <div class="leftflag">
                             <img src="https://i.ibb.co/q7Twx25/bangladesh.png" alt="flag">
-                            <p>+880</p>
+                            <p>+88</p>
                             </div>
-                                <input type="number"name="number"placeholder="Enter Your Number"required>
+                                <input type="number"name="number"id="numbe"placeholder="Enter Your Number"minlength="11"maxlength="11"required>
                     </div>
 
                 </div>
                 <div class="formbox">
                     <label for="email">Email</label>
-                    <input type="text"placeholder="Enter Your Email"name="email"required>
+                    <input type="text"placeholder="Enter Your Email"id="eml"name="email"required>
                 </div>
-              <button>Pay</button>
+              <button onclick="showaler()">Submit</button>
             </form>
            </div>
         </div>
@@ -176,8 +206,10 @@
         <%}%>
       </div>
       <div class="bardbox">
-        <h2>Deprature Time</h2>
-        <h2><%=data.start%></h2>
+        <h2>Bus Name</h2>
+        <%if(userbus){%>
+         <input type="text"name="bus"value="<%=userbus%>">
+        <%}%>
       </div>
       <div class="bardbox">
         <h2>Name</h2>
@@ -208,7 +240,7 @@
             <h2>Total Pay </h2>
             <h2><%=data.price%> TK</h2>
         </div>
-        <button><a href="/pament/<%data._id%>">Pay</a></button>
+        <button>Pay</button>
             </form>
         </div>
           </div>
@@ -230,6 +262,16 @@
        menu.addEventListener("click",function(){
         nav.classList.toggle("activemenu")
        });
+       function showaler(){
+        var numberda=document.getElementById("numbe");
+        var eml=document.getElementById("eml");
+       if(numberda.value=="" && eml.value==""){
+        swal("error", "Please Fill All Data");
+       }else{
+        swal("success!", "Please Click The Pay Button For Pay", "success");
+       }
+       }
+       var numbe=document.getElementById("numbe");
     // animation
      AOS.init();
     </script>

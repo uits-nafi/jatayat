@@ -9,7 +9,6 @@ const middlew=require("../middleware/controll")
 const mainf=require("../controllers/main")
 const BusData=require("../models/bus")
 const SSLCommerzPayment = require("sslcommerz-lts");
-const jaladata=require("../data/jala.json")
 const signupform=require("../models/signup")
 const bookingdata=require("../models/bookingticket")
 mongoose.connect("mongodb+srv://aakbor557:CTJOVarUEQoDH6SR@cluster0.0byudzt.mongodb.net/?retryWrites=true&w=majority",{
@@ -69,9 +68,9 @@ route.get("/information",middlew.islogout,async(req,res)=>{
     if(req.query.search){
       search=req.query.search
     }
-    const podata=await BusData.find({from:req.query.from,to:req.query.to,type_bus:req.query.bustype,date:req.query.date});
+    const podata=await BusData.find({from:req.query.from,to:req.query.to,type_bus:req.query.bustype,date:req.query.date,bus:req.query.busname});
     console.log(req.query.bustype);
-    const userbookdata=await bookingdata.find({from:req.query.from,to:req.query.to}).count();
+    const userbookdata=await bookingdata.find({from:req.query.from,to:req.query.to,time:req.query.date,bus_name:req.query.busname}).count();
     const mainseatdata=12-userbookdata;
     if(podata){
       res.render("./pages/information",{data:podata,mainseatdata})
@@ -120,13 +119,12 @@ route.post("/setdata",(req,res)=>{
 // })
 route.get("/pament",middlew.islogout,(req,res)=>{
   console.log(req.params.id)
-  const pp="64b3d2992a774031f3f4ecdf";
-const dayt=bookingdata.findById({_id:pp})
+const dayt=bookingdata.findById({_id:req.params.id})
   const data = {
     total_amount:50,
     currency: 'BDT',
-    tran_id: pp,
-    success_url:`http://localhost:2000/pament/success/${pp}`,
+    tran_id:"hhh",
+    success_url:`http://localhost:2000/pament/success`,
     fail_url: `${process.env.ROOT}/ssl-payment-fail`,
     cancel_url: `${process.env.ROOT}/ssl-payment-cancel`,
     shipping_method: 'No',
@@ -175,9 +173,9 @@ route.get("/pament/success/:id",async(req,res)=>{
    console.log(err)
   }
 })
-route.post("/pament/success/:id",(req,res)=>{
+route.post("/pament/success",(req,res)=>{
      try{
-       res.redirect(`/pament/success/${req.params.id}`)
+       res.redirect("/");
      }catch(err){
       console.log(err)
      }
@@ -197,9 +195,13 @@ route.get("/ticketbook/:id",middlew.islogout,async(req,res)=>{
     const userdrop=req.query.to;
     const usedate=req.query.date;
     const useridd=req.query.date;
+    const userbus=req.query.bus;
     const ticketdata=await BusData.findById({_id:ticketidp});
-    console.log(ticketdata)
-    res.render("./pages/bus",{data:ticketdata,username,usereamil,usernumber,userseat,userto,userfrom,userbroad,userdrop,usedate,useridd});
+    console.log(ticketdata);
+    // const bookingd=await bookingdata.find({ "bustickets": { $exists: false } });
+    const bookingd=await bookingdata.find({from:ticketdata.from,to:ticketdata.to,time:ticketdata.date});
+    console.log(bookingd)
+    res.render("./pages/bus",{data:ticketdata,username,usereamil,usernumber,userseat,userto,userfrom,userbroad,userdrop,usedate,useridd,userbus,matchseat:bookingd});
   }catch(err){
     console.log(err)
   }
@@ -216,6 +218,8 @@ route.post("/ticketbook",(req,res)=>{
     const userdate=req.body.date;
     const userfro=req.body.from;
     const usertoo=req.body.to;
+    const bus_namer=req.body.bus;
+    console.log(bus_namer)
     const setticketbook=new bookingdata({
       from:userfro,
       to:usertoo,
@@ -225,13 +229,14 @@ route.post("/ticketbook",(req,res)=>{
       seat:userseat,
       name:username,
       number:usernumber,
-      email:usereamil
+      email:usereamil,
+      bus_name:bus_namer
     });
      console.log(req.body.name);
      if(setticketbook){
       setticketbook.save();
-      console.log("Your Information"+"name:"+req.query.name+"email:"+req.query.email);
-      res.redirect("/pament/")
+      console.log("hello")
+      res.redirect("/pament")
      }else{
       console.log("something wrong")
      }

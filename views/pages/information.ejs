@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <link rel="stylesheet" href="css/inform.css" />
-
+<!-- alert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- fav icon -->
     <link rel="shortcut icon" href="images/JATAYAT.png" type="image/x-icon" />
     <!-- icon link -->
@@ -44,7 +45,7 @@
           <div class="serachb">
             <label for="from">From</label>
             <select name="from" id="from"required>
-              <option value="Chose">Chose Your Location</option>
+              <option value="Chose" selected disabled>Chose Your Location</option>
               <option value="Barguna">Barguna</option>
               <option value="Barisal">Barisal</option>
               <option value="Bhola">Bhola</option>
@@ -117,8 +118,8 @@
 
           <div class="serachb">
             <label for="to">To</label>
-            <select name="to" id="to"required>
-              <option value="Chose">Chose Your Location</option>
+            <select name="to" id="to" required>
+              <option value="Chose"id="seto"selected disabled>Chose Your Location</option>
               <option value="Barguna">Barguna</option>
               <option value="Barisal">Barisal</option>
               <option value="Bhola">Bhola</option>
@@ -193,15 +194,23 @@
             <label for="bustype">Bus Type</label>
             <select name="bustype" id="type"required>
               <option value="AC">AC</option>
-              <option value="Non AC">Non-AC</option>
+              <option value="NON AC">Non-AC</option>
+            </select>
+          </div>
+          <div class="serachb">
+            <label for="busname">Bus Name</label>
+            <select name="busname" id="type"required>
+              <option value="Green Line">Green Line</option>
+              <option value="Hanif">Hanif</option>
+              <option value="Shohagh Poribahan">Shohagh Poribahan</option>
             </select>
           </div>
 
           <div class="serachb">
             <label for="DEPARTURE">DEPARTURE DATE</label>
-            <input type="date"name="date"required>
+            <input type="date"name="date"id="dates"required >
           </div>
-          <button>Search Ticket</button>
+          <button onclick="showsweet()">Search Ticket</button>
         </form>
       </div>
       <!-- all data -->
@@ -273,6 +282,16 @@
       menu.addEventListener("click", function () {
         nav.classList.toggle("activemenu");
       });
+      function showsweet(){
+        var dates=document.getElementById("dates");
+        var seto=document.getElementById("seto")
+        if(dates.value==""){
+          swal("Please Fill The Information!", "You clicked the button!", "success");
+        }else{
+          swal("Good job!", "You clicked the Search button!", "success");
+
+        }
+      }
       // animation
       AOS.init();
     </script>
